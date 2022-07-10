@@ -24,6 +24,10 @@ constructor() {
     error : false
   };
   this.getWeather();
+
+  this.weatherIcon = {
+    Thunderstorm: "wi-thunderstorm",
+  };
 }
 
 calCelsius(temp) {
@@ -44,7 +48,8 @@ getWeather = async () => {
     celsius: this.calCelsius(response.main.temp),
     temp_max: this.calCelsius(response.main.temp_max),
     temp_min: this.calCelsius(response.main.temp_min),
-    description : response.weather[0].description
+    description : response.weather[0].description,
+    icon : this.weatherIcon.Thunderstorm
   })
 };
 
@@ -58,6 +63,7 @@ getWeather = async () => {
       temp_max={this.state.temp_max}
       temp_min={this.state.temp_min}
       description={this.state.description}
+      weatherIcon={this.state.icon}
       />
       </div>
      );
