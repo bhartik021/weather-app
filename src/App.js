@@ -72,22 +72,54 @@ get_WeatherIcon(icons, rangeId) {
 
 getWeather = async (e) => {
   e.preventDefault();
-  const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${API_key}`);
 
-  const response = await api_call.json();
+  const country = e.target.elements.country.value;
+    const city = e.target.elements.city.value;
 
-  console.log(response);
+    if (country && city) {
+      const api_call = await fetch(
+        `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_key}`
+      );
 
-  this.setState({
-    city : response.name,
-    country : response.sys.country,
-    celsius: this.calCelsius(response.main.temp),
-    temp_max: this.calCelsius(response.main.temp_max),
-    temp_min: this.calCelsius(response.main.temp_min),
-    description : response.weather[0].description,
-  });
-  this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
-};
+      const response = await api_call.json();
+
+      this.setState({
+        city: `${response.name}, ${response.sys.country}`,
+        country: response.sys.country,
+        main: response.weather[0].main,
+        celsius: this.calCelsius(response.main.temp),
+        temp_max: this.calCelsius(response.main.temp_max),
+        temp_min: this.calCelsius(response.main.temp_min),
+        description: response.weather[0].description,
+        error: false
+      });
+
+      // seting icons
+      this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
+
+      console.log(response);
+    } else {
+      this.setState({
+        error: true
+      });
+    }
+  };
+//   const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${API_key}`);
+
+//   const response = await api_call.json();
+
+//   console.log(response);
+
+//   this.setState({
+//     city : response.name,
+//     country : response.sys.country,
+//     celsius: this.calCelsius(response.main.temp),
+//     temp_max: this.calCelsius(response.main.temp_max),
+//     temp_min: this.calCelsius(response.main.temp_min),
+//     description : response.weather[0].description,
+//   });
+//   this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
+// };
 
   render() {
     return(
