@@ -1,5 +1,8 @@
 # React Weather App
 
+![screencapture-localhost-3000-2022-07-19-12_03_57](https://user-images.githubusercontent.com/75694208/179681964-6367dbd3-6ce7-4e72-89bc-a43354096fed.png)
+
+
 ## Installing 
 
 1. **Clone the repository** - 
