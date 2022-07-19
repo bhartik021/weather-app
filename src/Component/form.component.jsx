@@ -25,7 +25,7 @@ const Form = props => {
               autoComplete="off"
             />
           </div>
-          <div className="col-md-3 mt-md-0 mt-2 text-md-left ">
+          <div className="col-md-3 mt-md-0 mt-2 py-2 text-md-left ">
             <button className="btn btn-success">Get Weather</button>
           </div>
         </div>
