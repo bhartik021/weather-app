@@ -5,6 +5,7 @@ import 'weather-icons/css/weather-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Weather from './Component/weather.component';
+import Form from './Component/form.component';
 
 // https://api.openweathermap.org/data/2.5/weather?q=London,uk&callback=test&appid={API key}
 const API_key = "8912da1fc439d241a8799d08004a3bc2";
@@ -91,6 +92,7 @@ getWeather = async () => {
   render() {
     return(
       <div className="App">
+        <Form />
       <Weather 
       city={this.state.city} 
       country={this.state.country}
