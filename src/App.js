@@ -24,7 +24,6 @@ constructor() {
     description : "",
     error : false
   };
-  this.getWeather();
 
   this.weatherIcon = {
     Thunderstorm: "wi-thunderstorm",
@@ -71,7 +70,8 @@ get_WeatherIcon(icons, rangeId) {
 }
 
 
-getWeather = async () => {
+getWeather = async (e) => {
+  e.preventDefault();
   const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${API_key}`);
 
   const response = await api_call.json();
@@ -92,7 +92,7 @@ getWeather = async () => {
   render() {
     return(
       <div className="App">
-        <Form />
+        <Form loadweather={this.getWeather} error={this.state.error} />
       <Weather 
       city={this.state.city} 
       country={this.state.country}
