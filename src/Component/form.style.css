@@ -5,13 +5,17 @@ form {
   form input[name="city"],
   form input[name="country"] {
     background-color: transparent;
-    color: white;
+    color: #000000;
     border: none;
-    border-bottom: 2px solid whitesmoke;
+    border-bottom: 2px solid #498553;
     border-radius: 0;
+    outline: none;
   }
 
   form input:focus {
+    color: #000000;
     background-color: transparent;
     box-shadow: none !important;
+    border-radius: 0;
+    outline: none;
   }
