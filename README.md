@@ -2,7 +2,7 @@
 
 **Here is the demo** - [https://weather-app-kappa-blond.vercel.app/](https://weather-app-kappa-blond.vercel.app/)
 
-![screencapture-localhost-3000-2022-07-19-12_33_50](https://user-images.githubusercontent.com/75694208/179687343-cb3945f5-f1ca-4627-ad50-623d7eb9e03a.png)
+<img width="1470" height="832" alt="Screenshot 2026-05-23 at 11 10 50 PM" src="https://github.com/user-attachments/assets/584e2202-d0eb-4c98-9266-c5eca73b350f" />
 
 ## Installing 
 
